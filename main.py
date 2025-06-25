@@ -1,5 +1,4 @@
 import sys
-import os
 from model.CRFSelector import CRFSelector
 
 if __name__ == '__main__':
