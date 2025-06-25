@@ -19,6 +19,6 @@ if __name__ == '__main__':
     # vmaf_target = 97.0
 
     crf_selector = CRFSelector()
-    best_crf = crf_selector.find_best_crf_binary(input_video, output_video, min_crf, max_crf, vmaf_target)
+    best_crf = crf_selector.find_crf_binary(input_video, output_video, min_crf, max_crf, vmaf_target)
     
     print('Best CRF: ', best_crf)
