@@ -208,3 +208,6 @@ marimo/_lsp/
 __marimo__/
 
 .DS_Store
+*.mkv
+*.mp4
+*.yuv
