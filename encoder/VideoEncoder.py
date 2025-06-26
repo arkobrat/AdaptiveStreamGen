@@ -3,8 +3,10 @@ import subprocess
 import json
 
 class VideoEncoder:
-    def __init__(self, config_path: str = 'ffmpeg_config.json'):
-        self.config = self.__load_config__(os.path.abspath(os.path.join(os.path.dirname(__file__), config_path)))
+    def __init__(self, config_path: str = None) -> None:
+        if not config_path:
+            config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'config.json'))
+        self.config = self.__load_config__(config_path)
         self.codec =  self.config.get('codec', 'libx264')
         self.preset = self.config.get('preset', 'medium')
         self.options = self.config.get('options', [])

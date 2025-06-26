@@ -7,7 +7,7 @@ from encoder.VideoEncoder import VideoEncoder
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 class CRFSelector:
-    def __init__(self):
+    def __init__(self, encoder: VideoEncoder = VideoEncoder(), vmaf_calculator: VMAFCalculator = VMAFCalculator()) -> None:
         self.encoder = VideoEncoder()
         self.vmaf_calculator = VMAFCalculator()
 
