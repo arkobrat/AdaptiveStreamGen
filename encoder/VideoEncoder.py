@@ -34,3 +34,19 @@ class VideoEncoder:
             cmd += self.options
 
         subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+
+    def encode_at_scaled_resolution(self, input_path: str, output_path: str, crf: int, scale_factor: float) -> None:
+        cmd = [
+            'ffmpeg', '-y', '-i', input_path,
+            '-vf', f'scale=iw/{scale_factor}:ih/{scale_factor}',
+            '-c:v', self.codec,
+            '-crf', str(crf),
+            '-preset', self.preset,
+            '-an',
+            output_path,
+        ]
+
+        if self.options:
+            cmd += self.options
+
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)

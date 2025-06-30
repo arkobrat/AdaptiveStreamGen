@@ -1,5 +1,6 @@
 import sys
 from model.CRFSelector import CRFSelector
+from stream.AdaptiveStreamer import AdaptiveStreamer
 
 if __name__ == '__main__':
     if len(sys.argv) !=  6:
@@ -22,3 +23,7 @@ if __name__ == '__main__':
     best_crf = crf_selector.find_crf_binary(input_video, output_video, min_crf, max_crf, vmaf_target)
     
     print('Best CRF: ', best_crf)
+
+    num_streams = 4  # Number of adaptive streams to generate
+    adaptive_streamer = AdaptiveStreamer(input_video, output_video, num_streams, best_crf)
+    adaptive_streamer.stream()
