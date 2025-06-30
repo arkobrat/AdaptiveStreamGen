@@ -17,10 +17,11 @@ class AdaptiveStreamer:
         root, ext = os.path.splitext(self.output_path)
         crf = self.init_crf
         scale_factor = 1.0
+        step = 0.5
 
         for i in range(1, self.num_streams):
-            scale_factor += 0.5
-            crf -= 2
+            scale_factor += step
+            crf -= 1/step
             print(crf, scale_factor)
             output_stream_path = f'{root}_stream_{i}{ext}'
             self.encoder.encode_at_scaled_resolution(self.input_path, output_stream_path, crf=crf, scale_factor=scale_factor)
