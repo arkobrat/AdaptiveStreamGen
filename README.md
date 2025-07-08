@@ -25,3 +25,4 @@ However, they are not exactly easy to use with video encoding settings, in parti
 Install the requirements listed in `requirements.txt`.
 
 Sample usage of the library is demonstrated in `main.py`.
+
