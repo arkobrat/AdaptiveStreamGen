@@ -13,7 +13,7 @@ However, they are not exactly easy to use with video encoding settings, in parti
 * No pre-tuning needed for video encoding.
 * Adaptive streaming implemented by automatically encoding videos to different resolutions based on a scaling factor.
 * Easy conversion of unfragmented videos to an `MPEG-DASH` compatible format.
-* Customizable encoder, presets and options selection for `ffmpeg`
+* Customizable encoder, presets and options selection for `ffmpeg`.
 
 ## Dependencies
 * Requires [Python](https://www.python.org) 3.11+ to be installed
