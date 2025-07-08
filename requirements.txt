@@ -1,0 +1,4 @@
+ffmpeg_progress_yield==1.0.1
+ffmpeg_quality_metrics==3.6.0
+numpy==2.3.1
+tqdm==4.67.1
