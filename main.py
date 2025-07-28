@@ -24,6 +24,5 @@ if __name__ == '__main__':
     
     print('Best CRF: ', best_crf)
 
-    num_streams = 4  # Number of adaptive streams to generate
-    adaptive_streamer = AdaptiveStreamer(input_video, output_video, num_streams, best_crf)
-    adaptive_streamer.stream()
+    adaptive_streamer = AdaptiveStreamer(input_video, output_video, best_crf)
+    adaptive_streamer.create_stream()
